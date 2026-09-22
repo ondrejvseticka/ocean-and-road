@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ocean & Road
 
-## Getting Started
+Take-home for Iguana Technology / Prague Labs. ~1 hour, stack from the job ad: Next.js, TypeScript, styled-components, Redux.
 
-First, run the development server:
+## Run it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What's in here
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Home page loads mock vehicles on the server, filter runs client-side
+- Detail page at `/vehicle/[id]`, book button pushes into Redux
+- Cart at `/cart` — list, remove, total. Navbar badge links there
+- No API, no dates, no checkout. Didn't have time and didn't want fake backend fluff
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
+Next.js App Router, TypeScript, styled-components (with SSR registry), Redux Toolkit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## If this were real
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Route handlers instead of `data/vehicles.ts`, a DB, date overlap checks, actual checkout. Standard stuff — out of scope for a 1h demo.
